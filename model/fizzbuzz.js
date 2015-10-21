@@ -12,18 +12,19 @@
       numList.push(i);
     }
     return numList;
-  }
+  };
 
   FizzBuzzModel.prototype.listAllNumberWithFizzBuzz = function() {
     var numList = this.listAllNumber();
     var newNumList = [];
 
     numList.forEach(function(num) {
-      if(num % 3 == 0 && num % 5 == 0) return newNumList.push('fizzbuzz');
+      if(num % 3 === 0 && num % 5 === 0) return newNumList.push('fizzbuzz');
+      if(num % 3 === 0) return newNumList.push('fizz');
       newNumList.push(num);
     });
 
     return newNumList;
-  }
+  };
 
 })(this);
