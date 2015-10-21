@@ -3,7 +3,7 @@
 
   function FizzBuzzView() {
     this.fizzBuzzListView = '';
-    this.fizzBuzzLastNumber = 0;
+    this.fizzBuzzController = new FizzBuzzController();
   }
   exports.FizzBuzzView = FizzBuzzView;
 
@@ -17,8 +17,9 @@
     this.fizzBuzzListView = this.fizzBuzzListView.trim();
   }
 
-  FizzBuzzView.prototype.setLastNumber = function(number) {
-    this.fizzBuzzLastNumber = number;
+  FizzBuzzView.prototype.newFizzBuzzList = function(number) {
+    this.fizzBuzzController.newFizzBuzz(number);
+    return this.fizzBuzzController.getFizzBuzzList();
   }
 
 })(this);

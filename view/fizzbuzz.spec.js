@@ -7,9 +7,9 @@ describe("FizzBuzzView", function() {
       expect(view.fizzBuzzListView).to.equal('');
     });
 
-    it("should set default fizzBuzzLastNumber to 0", function() {
+    it("should set fizzBuzzController as a new FizzBuzzController", function() {
       var view = new FizzBuzzView();
-      expect(view.fizzBuzzLastNumber).to.equal(0);
+      expect(view.fizzBuzzController).to.eql(new FizzBuzzController());
     });
   });
 
@@ -21,11 +21,10 @@ describe("FizzBuzzView", function() {
     });
   });
 
-  describe("#setLastNumber", function() {
-    it("should set LastNumber to what it is provided", function() {
+  describe("#newFizzBuzzList", function() {
+    it("should create new FizzBuzz list", function() {
       var view = new FizzBuzzView();
-      view.setLastNumber(5);
-      expect(view.fizzBuzzLastNumber).to.equal(5);
+      expect(view.newFizzBuzzList(5)).to.eql([1,2,'fizz',4,'buzz']);
     });
   });
 });
